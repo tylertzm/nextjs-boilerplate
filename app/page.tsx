@@ -15,20 +15,7 @@ export default function Home() {
   return (
     <div className="flex flex-col h-screen">
       {/* Header Grid taking 20% of the height */}
-      <div className="grid grid-cols-4 gap-4 w-full bg-white p-4">
-        <Link href="/" className="tylertan text-center hover:underline flex items-center justify-center">
-          <h1>Person</h1>
-        </Link>
-        <Link href="/pages/developer" className="tylertan text-center hover:underline flex items-center justify-center">
-          <h1>Developer</h1>
-        </Link>
-        <Link href="/pages/berlin" className="tylertan text-center hover:underline flex items-center justify-center">
-          <h1>Berlin</h1>
-        </Link>
-        <Link href="/pages/timeline" className="tylertan text-center hover:underline flex items-center justify-center">
-          <h1>Timeline</h1>
-        </Link>
-      </div>
+
 
       {/* Name Section */}
       <div className="name text-black text-center bg-white text-2xl p-4">
