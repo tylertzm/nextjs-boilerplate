@@ -1,8 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 const IntersectingSquaresScene = () => {
   const mountRef = useRef(null);
+  const [redCoords, setRedCoords] = useState({ x: 0, y: 0, z: 0 });
+  const [blueCoords, setBlueCoords] = useState({ x: 0, y: 0, z: 0 });
 
   useEffect(() => {
     let renderer, scene, camera, animationId;
@@ -77,9 +79,14 @@ const IntersectingSquaresScene = () => {
     const animate = () => {
       line1.rotation.x += 0.01;
       line1.rotation.y += 0.01;
-
       line2.rotation.x -= 0.01;
       line2.rotation.y -= 0.01;
+
+      // Update coordinates
+      const redPos = line1.position;
+      const bluePos = line2.position;
+      setRedCoords({ x: redPos.x.toFixed(2), y: redPos.y.toFixed(2), z: redPos.z.toFixed(2) });
+      setBlueCoords({ x: bluePos.x.toFixed(2), y: bluePos.y.toFixed(2), z: bluePos.z.toFixed(2) });
 
       renderer.render(scene, camera);
       animationId = requestAnimationFrame(animate);
@@ -98,7 +105,14 @@ const IntersectingSquaresScene = () => {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full" />;
+  return (
+<div ref={mountRef} className="w-full h-full relative">
+  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-5 justify-center">
+    <div className="text-red-500">Red Square: Tech</div>
+    <div className="text-blue-500">Blue Square: Life</div>
+  </div>
+</div>
+  );
 };
 
 export default IntersectingSquaresScene;
