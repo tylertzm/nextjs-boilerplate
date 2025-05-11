@@ -26,6 +26,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+nav{
+  font-size: 20vw;
+}
 .tylertan {
   font-size: 2vh;
   color: #000000;

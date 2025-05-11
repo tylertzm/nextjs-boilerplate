@@ -10,9 +10,9 @@ const MAP_ID = '1228b90159890bac98703c1c';
 
 const MapsWithLocations: React.FC = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-white font-geistSans">
+    <div className="items-center justify-center h-screen bg-white font-geistSans">
       <div className="text-center w-full">
-        <h1 className="mylivelihood text-4xl font-bold text-black mb-6">My Livelihood</h1>
+        <h1 className="mylivelihood font-bold text-black mb-6">My Livelihood</h1>
         <div className="map" style={mapContainerStyle}>
           <APIProvider apiKey={GOOGLE_MAPS_API_KEY} onLoad={() => console.log('Maps API has loaded.')}>            
             <Map
