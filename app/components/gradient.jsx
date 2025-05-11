@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 const terms = [
   ['Teknologi', 'AI', 'Reka Bentuk'],
   ['技术', '人工智能', '设计'],
-  ['Technologie', 'KI', 'Design']
+  ['Technologie', 'KI', 'Kunst'],
+  ['Technology', 'AI', 'Design']
 ];
 
 const ColorGradientGrid = () => {
