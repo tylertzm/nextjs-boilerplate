@@ -1,9 +1,7 @@
-
-'use client';
-import React, { useEffect, useState } from 'react';
+"use client";
 import Link from 'next/link';
-import ColorGradientGrid from '../components/gradient'
-// Type definitions for GitHub Activity and Commit
+import { useEffect, useState } from 'react';
+
 interface Commit {
   message: string;
 }
@@ -17,14 +15,25 @@ interface Event {
   payload: {
     commits: Commit[];
   };
+  created_at: string;
 }
 
-const DeveloperPage: React.FC = () => {
+
+
+const GITHUB_USERNAME = 'tylertzm';
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat('ja-JP', {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  }).format(date);
+};
+
+const DeveloperPage = () => {
   const [activities, setActivities] = useState<Event[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
-  // Replace 'your-github-username' with your actual GitHub username
-  const GITHUB_USERNAME = 'tylertzm';
 
   useEffect(() => {
     const fetchGithubActivity = async () => {
@@ -32,9 +41,8 @@ const DeveloperPage: React.FC = () => {
         const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/events`);
         if (response.ok) {
           const data: Event[] = await response.json();
-          // Filter only push events
-          const pushEvents = data.filter(event => event.type === 'PushEvent');
-          setActivities(pushEvents.slice(0, 5)); // Limit to 5 activities
+          const pushEvents = data.filter((event) => event.type === 'PushEvent');
+          setActivities(pushEvents.slice(0, 5));
         }
       } catch (error) {
         console.error('Failed to fetch GitHub activity:', error);
@@ -47,32 +55,60 @@ const DeveloperPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-white font-geistSans">
+    <div className='min-h-screen flex justify-center bg-[#ffffff] py-20 px-4'>
+      <div className='max-w-xl mx-auto'>
+        <h1 className='mb-16 text-3xl font-light tracking-wider text-neutral-800 border-b border-neutral-200 pb-4 max-w-xs'>
+        进展
+          <span className='block text-sm mt-1 text-neutral-500'>Development Activity</span>
+        </h1>
 
-      <div className="w-full max-w-xl p-4">
-        
         {loading ? (
-          <p>Loading...</p>
+          <div className='flex justify-center py-12'>
+            <div className='h-[1px] w-12 bg-neutral-300 animate-pulse'></div>
+          </div>
         ) : activities.length > 0 ? (
-          <ul className="space-y-3">
+          <div className='space-y-16'>
             {activities.map((event, index) => (
-              <li key={index} className=" p-3">
-                <p className="text-lg text-red-600 font-medium">
-                  <Link href={event.repo.url.replace('api.', '').replace('/repos', '')} target="_blank">
-                    {event.repo.name}
-                  </Link>
-                </p>
-                <p className="text-sm text-blue-600">Pushed {event.payload.commits.length} commit(s)</p>
-                <ul className="ml-4 mt-1 text-sm text-black-700">
-                  {event.payload.commits.map((commit, idx) => (
-                    <li key={idx}>- {commit.message}</li>
-                  ))}
-                </ul>
-              </li>
+              <div key={index} className='relative pl-6'>
+                <div className='absolute left-0 top-2 h-[1px] w-3 bg-neutral-400' />
+                <div className='space-y-3'>
+                  <time className='font-light tracking-wider text-sm text-neutral-500'>
+                    {formatDate(event.created_at)}
+                  </time>
+                  <h3 className='text-xl font-light tracking-wide'>
+                    <Link
+                      href={event.repo.url.replace('api.', '').replace('/repos', '')}
+                      target='_blank'
+                      className='hover:text-neutral-600 transition-colors duration-300'
+                    >
+                      {event.repo.name}
+                    </Link>
+                  </h3>
+                  <p className='text-sm font-light text-neutral-600'>
+                    {event.payload.commits.length}
+                    <span className='ml-1'>コミット</span>
+                  </p>
+                  <ul className='mt-4 space-y-2'>
+                    {event.payload.commits.map((commit, idx) => (
+                      <li
+                        key={idx}
+                        className='text-sm font-light text-neutral-700 leading-relaxed pl-4 border-l border-neutral-200'
+                      >
+                        {commit.message}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         ) : (
-          <p>No recent push events found.</p>
+          <div className='py-12 text-center'>
+            <p className='text-neutral-600 font-light tracking-wide'>
+              最近のアクティビティはありません
+              <span className='block mt-1 text-sm text-neutral-500'>No recent activities found</span>
+            </p>
+          </div>
         )}
       </div>
     </div>
