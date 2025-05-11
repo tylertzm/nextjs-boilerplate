@@ -2,7 +2,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-
+import ColorGradientGrid from '../components/gradient'
 // Type definitions for GitHub Activity and Commit
 interface Commit {
   message: string;
@@ -49,22 +49,21 @@ const DeveloperPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-white font-geistSans">
 
-      <div className="w-full max-w-xl p-4 bg-gray-100 rounded-2xl shadow-lg">
-        <h2 className="text-2xl font-semibold mb-4">Recent GitHub Activity</h2>
+      <div className="w-full max-w-xl p-4">
         
         {loading ? (
           <p>Loading...</p>
         ) : activities.length > 0 ? (
           <ul className="space-y-3">
             {activities.map((event, index) => (
-              <li key={index} className="bg-white p-3 rounded-xl shadow-sm">
-                <p className="text-lg font-medium">
+              <li key={index} className=" p-3">
+                <p className="text-lg text-red-600 font-medium">
                   <Link href={event.repo.url.replace('api.', '').replace('/repos', '')} target="_blank">
                     {event.repo.name}
                   </Link>
                 </p>
-                <p className="text-sm text-gray-600">Pushed {event.payload.commits.length} commit(s)</p>
-                <ul className="ml-4 mt-1 text-sm text-gray-700">
+                <p className="text-sm text-blue-600">Pushed {event.payload.commits.length} commit(s)</p>
+                <ul className="ml-4 mt-1 text-sm text-black-700">
                   {event.payload.commits.map((commit, idx) => (
                     <li key={idx}>- {commit.message}</li>
                   ))}

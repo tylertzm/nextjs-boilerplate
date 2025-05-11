@@ -2,6 +2,7 @@
 import Link from 'next/link';  // Import Link from Next.js
 import DashedLinesScene from "./components/dashedlinescene";
 import LogoMarquee from "./components/logomarque";
+import ColorGradientGrid from './components/gradient'
 
 export default function Home() {
   // Define the logos array with image paths
@@ -14,13 +15,12 @@ export default function Home() {
 
   return (
     <div className="flex flex-col h-screen">
-      {/* Header Grid taking 20% of the height */}
-
-
-      {/* Name Section */}
-      <div className="name text-black text-center bg-white text-2xl p-4">
+            {/* Name Section */}
+            <div className="name text-black text-center bg-white text-2xl p-4 mb-10">
         Tyler Tan
       </div>
+
+      <ColorGradientGrid />
 
 
 
