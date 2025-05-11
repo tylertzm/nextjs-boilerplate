@@ -1,0 +1,24 @@
+.marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .marquee {
+    display: flex;
+    gap: 20px;
+    will-change: transform;
+  }
+  
+  .logo-image {
+    object-fit: contain;
+    filter: grayscale(50%);
+    transition: filter 0.3s;
+  }
+  
+  .logo-image:hover {
+    filter: grayscale(0%);
+  }
