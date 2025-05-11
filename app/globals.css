@@ -50,3 +50,20 @@ body {
   font-family: serif;
 
 }
+
+.mylivelihood{
+  font-family: serif;
+  padding-left: 7vh;
+  text-align: left;
+  font-size: 10vh;
+}
+
+.map{
+  padding: 7vh;
+}
+
+.flow{
+  font-family: serif;
+  font-size: 10vh;
+  text-align: right;
+}

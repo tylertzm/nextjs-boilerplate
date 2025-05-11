@@ -55,7 +55,7 @@ const DeveloperPage = () => {
   }, []);
 
   return (
-    <div className='min-h-screen flex justify-center bg-[#ffffff] py-20 px-4'>
+    <div className='flow min-h-screen flex justify-center bg-[#ffffff] py-20 px-4'>
       <div className='max-w-xl mx-auto'>
         <h1 className='mb-16 text-3xl font-light tracking-wider text-neutral-800 border-b border-neutral-200 pb-4 max-w-xs'>
         进展

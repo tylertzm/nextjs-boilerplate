@@ -41,9 +41,9 @@ export default function TimelinePage() {
 
 
   return (
-    <div className="min-h-screen bg-[#ffffff] py-20">
-      <div className="container mx-auto px-4 md:px-6">
-        <h1 className="mb-16 text-3xl font-light tracking-wider text-neutral-800 border-b border-neutral-200 pb-4 max-w-xs">
+    <div className="flow flex justify-center items-center min-h-screen bg-[#ffffff] py-20">      
+    <div className="container mx-auto px-4 md:px-6">
+        <h1 className="mb-16 text-3xl font-light tracking-wider text-black-800 border-b border-neutral-200 pb-4 max-w-xs">
           時間の流れ
           <span className="block text-sm mt-1 text-neutral-500">Flow of Time</span>
         </h1>

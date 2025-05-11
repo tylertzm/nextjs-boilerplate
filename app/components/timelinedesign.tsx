@@ -48,7 +48,7 @@ export interface TimelineProps {
 
 export function Timeline({ items, className }: TimelineProps) {
   return (
-    <div className={cn("space-y-0", className)}>
+    <div className={cn("space-y-0 justify-center", className)}>
       {items.map((item, index) => (
         <TimelineItem key={index} {...item} />
       ))}
