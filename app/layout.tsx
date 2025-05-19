@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,7 +13,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
 
 export const metadata: Metadata = {
   title: "Tyler Tan - AI Expert",
@@ -28,25 +27,36 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <nav className="nav grid grid-cols-4 gap-4 w-full bg-white p-4">
-        <Link href="/" className="tylertan text-center hover:underline flex items-center justify-center">
-          <h1>Person</h1>
-        </Link>
-        <Link href="/developer" className="tylertan text-center hover:underline flex items-center justify-center">
-          <h1>Developer</h1>
-        </Link>
-        <Link href="/berlin" className="tylertan text-center hover:underline flex items-center justify-center">
-          <h1>Berlin</h1>
-        </Link>
-        <Link href="/timeline" className="tylertan text-center hover:underline flex items-center justify-center">
-          <h1>Timeline</h1>
-        </Link>
-      </nav>
+        <nav className="nav grid grid-cols-4 gap-4 w-full bg-white p-4">
+          <Link
+            href="/"
+            className="tylertan text-center hover:underline flex items-center justify-center"
+          >
+            <h1>Person</h1>
+          </Link>
+          <Link
+            href="/developer"
+            className="tylertan text-center hover:underline flex items-center justify-center"
+          >
+            <h1>Developer</h1>
+          </Link>
+          <Link
+            href="/berlin"
+            className="tylertan text-center hover:underline flex items-center justify-center"
+          >
+            <h1>Berlin</h1>
+          </Link>
+          <Link
+            href="/timeline"
+            className="tylertan text-center hover:underline flex items-center justify-center"
+          >
+            <h1>Timeline</h1>
+          </Link>
+        </nav>
+
         {children}
         <Analytics />
       </body>
     </html>
   );
 }
-
-

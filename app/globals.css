@@ -40,6 +40,62 @@ nav{
 
 }
 
+.aboutme {
+  font-size: 1.5em; /* Adjust the font size as needed */
+  color: #333; /* Set a dark gray color (adjust as desired) */
+  text-align: justify; /* Center the text horizontally */
+  margin-top: 1em; /* Add some top margin for spacing */
+  margin-bottom: 1em; /* Add some bottom margin for spacing */
+  padding: 0.5em 1em; /* Add some padding around the text */
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+/* You can add more specific styles based on your overall design */
+
+/* Example for different font family */
+.aboutme {
+  font-family: sans-serif; /* Or a specific font like 'Arial', 'Helvetica', etc. */
+}
+
+/* Example for a different text color */
+.aboutme {
+  color: #000000; /* A blue color */
+}
+
+/* Example for adjusting margins */
+.aboutme {
+  margin: 2em 20em; /* Larger top and bottom margins, no left/right margin */
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socials li {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center items horizontally within the li */
+  text-align: center; /* Center the text */
+  margin: 0 5px;
+}
+
+.socials li img {
+  width: 5vh;
+  height: 5vh;
+  margin-bottom: 1vh; /* Add spacing between the image and text */
+}
+
+.socials li a {
+  text-decoration: none;
+  color: inherit;
+  display: flex; /* Make the link a flex container */
+  flex-direction: column; /* Stack image and text within the link */
+  align-items: center; /* Center image and text within the link */
+}
 .name{
   font-size: 18vh;
   padding-top: 10vh;
