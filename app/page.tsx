@@ -20,7 +20,7 @@ export default function Home() {
       </div>
 
       <p className='aboutme'>
-        I'm currently a software developer working on MVP powered by a Java Springboot backend. Also working on an AI project
+        I'm currently a software developer working on a MVP powered by Java Springboot. Also working on an AI project
         to implement RAG in a medical information chatbot for my university project. In private, I experiment with
         different AI infrastructure tools to build my own product.
       </p>
