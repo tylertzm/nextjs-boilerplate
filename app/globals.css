@@ -41,13 +41,12 @@ nav{
 }
 
 .aboutme {
-  font-size: 1.5em; /* Adjust the font size as needed */
-  color: #333; /* Set a dark gray color (adjust as desired) */
-  text-align: justify; /* Center the text horizontally */
-  margin-top: 1em; /* Add some top margin for spacing */
-  margin-bottom: 1em; /* Add some bottom margin for spacing */
-  padding: 0.5em 1em; /* Add some padding around the text */
-  border-radius: 5px; /* Optional: Add rounded corners */
+  max-width: 100vw;
+  margin: 2em auto;
+  font-size: 1.25em;
+  color: #000;
+  font-family: sans-serif;
+  text-align: justify;
 }
 
 /* You can add more specific styles based on your overall design */
@@ -62,10 +61,6 @@ nav{
   color: #000000; /* A blue color */
 }
 
-/* Example for adjusting margins */
-.aboutme {
-  margin: 2em 20em; /* Larger top and bottom margins, no left/right margin */
-}
 .socials {
   display: flex;
   justify-content: center;
