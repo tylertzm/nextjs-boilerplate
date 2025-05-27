@@ -19,10 +19,10 @@ export function TimelineItem({ title, date, description, icon, className }: Time
   return (
     <div className={cn("relative pl-6 pb-16 last:pb-0", className)}>
       {/* Minimal marker */}
-      <div className="absolute left-0 top-2 h-[1px] w-3 bg-neutral-400" />
+      <div className="absolute left-0 top-2 h-[1px] w-3 bg-white" />
 
       {/* Thin vertical line */}
-      <div className="absolute left-0 top-3 h-full w-[1px] bg-neutral-200" />
+      <div className="absolute left-0 top-3 h-full w-[1px] bg-white" />
 
       <div className="flex flex-col gap-3">
         {/* Date with subtle styling */}

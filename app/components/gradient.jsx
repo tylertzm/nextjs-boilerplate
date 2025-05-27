@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const terms = [
   ['Teknologi', 'AI', 'Reka Bentuk'],
@@ -8,29 +8,25 @@ const terms = [
 ];
 
 const ColorGradientGrid = () => {
-  const [gradient, setGradient] = useState(
-    'linear-gradient(90deg, #8B0000, #00008B)'
+  const [gradient] = useState(
+    'linear-gradient(to bottom, black 0%, blue 50%, black 100%)'
   );
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setGradient(
-        `linear-gradient(90deg, hsl(${Math.random() * 360}, 100%, 30%), hsl(${Math.random() * 360}, 100%, 30%))`
-      );
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div
-      className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8 text-center p-6 sm:p-8 lg:p-10 text-white'
-      style={{ background: gradient }}
+      style={{
+        background: gradient,
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr',
+        fontSize: '2em',
+        gap: '5rem',
+        padding: '5rem',
+        color: 'white',
+        textAlign: 'center'
+      }}
     >
       {terms.flat().map((term, index) => (
-        <div
-          key={index}
-          className='p-3 sm:p-4 lg:p-6 text-lg sm:text-xl lg:text-2xl xl:text-3xl rounded-xl bg-opacity-50 backdrop-blur-md'
-        >
+        <div key={index}>
           {term}
         </div>
       ))}

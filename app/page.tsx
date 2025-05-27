@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="flex flex-col h-screen">
             {/* Name Section */}
-            <div className="name text-black text-center bg-white text-2xl p-4 mb-10">
+            <div className="name text-white text-center p-4 mb-10">
         Tyler Tan
       </div>
 
@@ -29,19 +29,19 @@ export default function Home() {
       <ul className='socials'>
       <li>
         <a href="https://github.com/tylertzm" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000" alt="Github Logo" />
+          <img src="https://img.icons8.com/?size=100&id=62856&format=png&color=ffffff" alt="Github Logo" />
           Github
         </a>
       </li>
       <li>
         <a href="https://www.linkedin.com/in/tyler-tan-76634724a/" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000" alt="LinkedIn Logo" />
+          <img src="https://img.icons8.com/?size=100&id=8808&format=png&color=ffffff" alt="LinkedIn Logo" />
           LinkedIn
         </a>
       </li>
       <li>
         <a href="mailto:TZM2002@protonmail.com">
-          <img src="https://img.icons8.com/?size=100&id=b22i9tF4I4yn&format=png&color=000000" alt="Mail Logo" />
+          <img src="https://img.icons8.com/?size=100&id=b22i9tF4I4yn&format=png&color=ffffff" alt="Mail Logo" />
           Mail
         </a>
       </li>
@@ -53,7 +53,7 @@ export default function Home() {
 
 
       {/* Dashed Lines Section taking 80% of the height */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full bg-white p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full  p-4">
         <DashedLinesScene />
       </div>
     </div>

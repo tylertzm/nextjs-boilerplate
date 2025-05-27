@@ -55,7 +55,7 @@ const DeveloperPage = () => {
   }, []);
 
   return (
-    <div className='flow min-h-screen flex justify-center bg-[#ffffff] py-20 px-4'>
+    <div className='flow min-h-screen flex justify-center  py-20 px-4'>
       <div className='max-w-xl mx-auto'>
         <h1 className='mb-16 text-3xl font-light tracking-wider text-neutral-800 border-b border-neutral-200 pb-4 max-w-xs'>
         进展
@@ -64,13 +64,13 @@ const DeveloperPage = () => {
 
         {loading ? (
           <div className='flex justify-center py-12'>
-            <div className='h-[1px] w-12 bg-neutral-300 animate-pulse'></div>
+            <div className='h-[1px] w-12 bg-white animate-pulse'></div>
           </div>
         ) : activities.length > 0 ? (
           <div className='space-y-16'>
             {activities.map((event, index) => (
               <div key={index} className='relative pl-6'>
-                <div className='absolute left-0 top-2 h-[1px] w-3 bg-neutral-400' />
+                <div className='absolute left-0 top-2 h-[1px] w-3 bg-white' />
                 <div className='space-y-3'>
                   <time className='font-light tracking-wider text-sm text-neutral-500'>
                     {formatDate(event.created_at)}

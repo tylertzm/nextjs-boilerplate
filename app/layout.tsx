@@ -27,28 +27,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav className="nav grid grid-cols-4 gap-4 w-full bg-white p-4">
+        <nav className="nav grid grid-cols-4 gap-4 w-full text-white p-4">
           <Link
             href="/"
-            className="tylertan text-center hover:underline flex items-center justify-center"
+            className=" text-center hover:underline flex items-center justify-center"
           >
             <h1>Person</h1>
           </Link>
           <Link
             href="/developer"
-            className="tylertan text-center hover:underline flex items-center justify-center"
+            className=" text-center hover:underline flex items-center justify-center"
           >
             <h1>Developer</h1>
           </Link>
           <Link
             href="/berlin"
-            className="tylertan text-center hover:underline flex items-center justify-center"
+            className=" text-center hover:underline flex items-center justify-center"
           >
             <h1>Berlin</h1>
           </Link>
           <Link
             href="/timeline"
-            className="tylertan text-center hover:underline flex items-center justify-center"
+            className=" text-center hover:underline flex items-center justify-center"
           >
             <h1>Timeline</h1>
           </Link>
