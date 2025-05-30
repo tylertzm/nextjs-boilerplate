@@ -50,8 +50,6 @@ export default function Home() {
 
 
 
-
-
       {/* Dashed Lines Section taking 80% of the height */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full  p-4">
         <DashedLinesScene />
